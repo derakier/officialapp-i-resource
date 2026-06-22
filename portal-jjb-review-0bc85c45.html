@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>再次翻阅 · 竞技宝</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f0;
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+      color: #2c2b28;
+      line-height: 1.8;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 740px;
+      width: 100%;
+    }
+
+    .hero-tag {
+      margin-bottom: 2rem;
+      border-left: 4px solid #b7a482;
+      padding-left: 1rem;
+    }
+
+    .hero-tag span {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      color: #7c6e5a;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #3b3530;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #6f6252;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #ded9cf;
+      padding-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .intro-box {
+      background: #f2efe9;
+      border-radius: 8px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #e8e1d6;
+    }
+
+    .intro-box p {
+      font-size: 1.05rem;
+    }
+
+    .intro-box strong {
+      color: #6f5e47;
+      font-weight: 500;
+    }
+
+    .content-block {
+      margin-bottom: 2.2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 2rem 0 1rem;
+      color: #3f3a34;
+      border-bottom: 1px dashed #d6cfc0;
+      padding-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    .pull-quote {
+      background: #ede8df;
+      border-left: 5px solid #a3907a;
+      padding: 1rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      border-radius: 0 8px 8px 0;
+      font-style: normal;
+      color: #3f3830;
+      font-size: 1.05rem;
+    }
+
+    .pull-quote::before {
+      content: "✦ ";
+      color: #a3907a;
+      font-size: 1.2rem;
+    }
+
+    .faq-mini {
+      background: #f4f0e9;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #5b4f3e;
+    }
+
+    .faq-mini p {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-mini .q {
+      font-weight: 500;
+      color: #5b4f3e;
+    }
+
+    .faq-mini .a {
+      margin-left: 0.2rem;
+      color: #4b443a;
+    }
+
+    .visit-reminder {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      border: 1px solid #d9d0c2;
+      border-radius: 40px;
+      padding: 0.9rem 2rem;
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #4d4237;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .visit-reminder a {
+      color: #6f5e47;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #c7baa8;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .visit-reminder a:hover {
+      border-bottom-color: #6f5e47;
+      color: #3f352b;
+    }
+
+    .footer-note {
+      margin-top: 3.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ded6c9;
+      font-size: 0.9rem;
+      color: #7a6f5f;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 550px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .intro-box {
+        padding: 1.2rem 1.2rem;
+      }
+      .pull-quote {
+        padding: 0.8rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="hero-tag">
+    <span>— 书签 · 再访 —</span>
+  </div>
+
+  <h1>收藏一处角落，持续回来</h1>
+  <div class="subhead">一篇关于再次打开、持续关注的安静笔记</div>
+
+  <div class="intro-box">
+    <p>有时候我们遇见一个地方，不会立刻说「这就是全部」。而是先放上书签，隔一段时日再回来看看——页面的细节、更新的气息、熟悉的入口。这就是我为我们整理这篇说明的原因：如果你曾到过 <strong>竞技宝</strong> 的页面，或者只是偶然路过，不妨把它当作一个可以反复翻阅的角落。</p>
+  </div>
+
+  <div class="content-block">
+    <h2>为什么需要「再次访问」的习惯</h2>
+    <p>信息流动太快，一个值得留意的站点很容易被新的标签淹没。但有些页面之所以值得收藏，恰恰因为它不会频繁改变初衷，也不会用夸张的承诺吸引眼球。它安静地待在那里，等你需要时，自然就想起它。我自己的习惯是：把真正有用的链接放在浏览器书签栏的同一个文件夹里，每隔几周点开一次——不是检查什么，而是看看有没有新的内容，或者只是重温一下那个界面的节奏。</p>
+
+    <div class="pull-quote">
+      书签不只是地址的备份，更是一份「我决定再次关注」的轻许诺。
+    </div>
+
+    <p>对于 <a href="https://portal-jjb.com" style="color:#6f5e47; text-decoration: underline; text-underline-offset:3px;">竞技宝</a> 来说，我的感受也是如此。第一次打开时，界面简洁，没有多余的干扰；第二次再访，才开始注意到一些细节布局和内容的层次。我慢慢觉得，这个地方适合以「收藏—回访」的节奏来使用，而不是一次性浏览完就离开。</p>
+  </div>
+
+  <div class="content-block">
+    <h2>持续关注的意义</h2>
+    <p>持续关注不等于天天盯着看。它更像是一种从容的知情：你知道从哪里可以找到它，你也知道它的风格不会忽然变得陌生。我在这篇页面的最初版本里写过一句话，现在依然适用——「一个可靠的访问入口，比一百次偶然点击更重要」。</p>
+
+    <p>如果你也打算把 <strong>竞技宝</strong> 放在书签里，或者已经在这么做了，那么下面这几点是我自己回访时留意到的小细节：</p>
+
+    <p style="padding-left:1.2rem; border-left:2px solid #d6cfc0; margin-left:0.2rem;">
+      · 页面加载速度稳定，没有多余跳转<br>
+      · 内容结构清晰，适合快速定位<br>
+      · 无明显诱导点击的元素，阅读体验干净
+    </p>
+  </div>
+
+  <div class="faq-mini">
+    <h3>📌 收藏前的小问答</h3>
+    <p><span class="q">Q：</span> 我第一次看到这个站点，该从哪里开始？<br>
+    <span class="a">A：</span> 直接打开 <a href="https://portal-jjb.com" style="color:#6f5e47; text-decoration:underline; text-underline-offset:2px;">竞技宝</a> 的主页，花几分钟浏览一下导航和内容分区，不必急着全部看完。</p>
+
+    <p><span class="q">Q：</span> 会不会经常变化，导致我找不到之前看过的内容？<br>
+    <span class="a">A：</span> 就我持续观察来看，页面布局有延续性，核心入口保持稳定，适合长期收藏。</p>
+
+    <p><span class="q">Q：</span> 需要注册或登录才能看主要内容吗？<br>
+    <span class="a">A：</span> 浏览页面本身无需登录，直接访问即可看到公开信息。你可以先收藏，后续再根据自己需要决定。</p>
+  </div>
+
+  <div class="visit-reminder">
+    📖 再次访问 · <a href="https://portal-jjb.com">竞技宝</a>
+  </div>
+
+  <div class="footer-note">
+    <span>— 整理于一个安静的下午 · 书签常亮 —</span>
+  </div>
+
+</div>
+</body>
+</html>
