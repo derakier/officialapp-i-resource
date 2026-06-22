@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 · 稳定导航与场景说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f5f7;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #222;
+            line-height: 1.6;
+            padding: 24px 20px 48px;
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 14px 28px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e6e8ec;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 44px;
+        }
+
+        .logo-area {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+            color: #1e293b;
+        }
+
+        .logo-area a {
+            color: #1e293b;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .logo-area a:hover {
+            border-bottom-color: #3b82f6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0b1a2a;
+        }
+
+        /* Hero 区 */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 48px 40px 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e1e5eb;
+            margin-bottom: 36px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #eef2f6;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #2c3e50;
+            letter-spacing: 0.3px;
+            margin-bottom: 18px;
+        }
+
+        .hero-title {
+            font-size: 1.9rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: #0f1825;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: #3e4b5c;
+            max-width: 760px;
+            margin-bottom: 24px;
+        }
+
+        .hero-action {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #bcc3cd;
+            border-radius: 40px;
+            padding: 8px 24px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            cursor: default;
+            transition: background 0.15s;
+        }
+
+        .btn-outline:hover {
+            background: #f0f2f5;
+        }
+
+        .text-link-embed {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #a0c0f0;
+        }
+
+        .text-link-embed:hover {
+            border-bottom-style: solid;
+            color: #1d4ed8;
+        }
+
+        /* 卡片网格 */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: #1b283a;
+            border-left: 5px solid #3b82f6;
+            padding-left: 16px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 26px 24px 28px;
+            border: 1px solid #dde1e7;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a2637;
+        }
+
+        .card p {
+            color: #425066;
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            margin-top: 8px;
+            padding-left: 20px;
+            color: #3b4a5c;
+            font-size: 0.9rem;
+        }
+
+        .card ul li {
+            margin-bottom: 6px;
+        }
+
+        /* 常见说明 / FAQ 摘要 */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 36px 36px;
+            border: 1px solid #dde1e7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 36px;
+        }
+
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a2637;
+            margin-bottom: 6px;
+        }
+
+        .faq-answer {
+            color: #50657a;
+            font-size: 0.95rem;
+        }
+
+        .faq-answer a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #bdd3f0;
+        }
+
+        .faq-answer a:hover {
+            border-bottom-color: #1e40af;
+        }
+
+        /* 页尾 */
+        .site-footer {
+            text-align: center;
+            border-top: 1px solid #d5dbe3;
+            padding-top: 24px;
+            margin-top: 16px;
+            color: #5b6a7c;
+            font-size: 0.9rem;
+        }
+
+        .site-footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .site-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 20px;
+                border-radius: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 12px 20px;
+                margin-top: 4px;
+            }
+
+            .hero-card {
+                padding: 32px 20px 28px;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .faq-section {
+                padding: 24px 18px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 顶部导航 -->
+        <nav class="site-nav">
+            <div class="logo-area">
+                <a href="https://cnweb-jjb.com">竞技宝</a>
+            </div>
+            <div class="nav-links">
+                <a href="#scene">场景</a>
+                <a href="#faq">说明</a>
+                <a href="https://cnweb-jjb.com">竞技宝</a>
+            </div>
+        </nav>
+
+        <!-- Hero：稳定入口观点 -->
+        <div class="hero-card">
+            <span class="hero-tag">轻量导航 · 信息集中</span>
+            <h1 class="hero-title">稳定入口与页面说明</h1>
+            <p class="hero-desc">
+                在信息密集的线上环境中，一个清晰、无冗余的导航路径比大篇幅宣传更有效率。<a href="https://cnweb-jjb.com" class="text-link-embed">竞技宝</a>作为内容集合点，适合需要快速定位、场景明确、说明克制的使用者。本页以卡片方式提炼三个常用场景，配合常见问题摘要，帮助新接触者更快建立认知。
+            </p>
+            <div class="hero-action">
+                <span class="btn-outline">场景一 · 信息检索</span>
+                <span class="btn-outline">场景二 · 内容参考</span>
+            </div>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <h2 class="section-title" id="scene">三个轻量场景</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">📋</span>
+                <h3>快速查阅与索引</h3>
+                <p>
+                    在不确定具体栏目时，通过导航和分区卡片直接定位有效内容。不需要反复跳转，减少认知负担。适用于首次浏览或常规信息更新。
+                </p>
+                <ul>
+                    <li>顶部导航直达主要分区</li>
+                    <li>常见说明摘要前置</li>
+                    <li>减少页面层级</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="card-icon">🔍</span>
+                <h3>场景化筛选</h3>
+                <p>
+                    不同使用者关注点不同：有人侧重结构，有人需要快速确认页面属性。通过三个独立模块展示信息，让每个人按需摄取，不受冗长段落干扰。
+                </p>
+                <ul>
+                    <li>模块独立，互不依赖</li>
+                    <li>细边框与柔和阴影区隔</li>
+                    <li>每个卡片聚焦一个话题</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="card-icon">📎</span>
+                <h3>简洁参考与引用</h3>
+                <p>
+                    当需要将某个页面作为参考资料分享时，简洁的说明和直接的链接比大段介绍更受用。此处展示的即是一种轻量引用方式：一句话配合一个自然嵌入的链接。
+                </p>
+                <ul>
+                    <li>引用格式干净</li>
+                    <li>链接文本即品牌名</li>
+                    <li>适合嵌入笔记或文档</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 常见说明 FAQ 摘要 -->
+        <div class="faq-section" id="faq">
+            <h2 class="section-title" style="border-left-color:#64748b; margin-bottom:12px;">常见说明摘要</h2>
+            <div class="faq-item">
+                <div class="faq-question">这个页面主要提供什么？</div>
+                <div class="faq-answer">
+                    一个指向 <a href="https://cnweb-jjb.com">竞技宝</a> 的稳定入口，配合轻量导航、三个场景模块和简要说明。不堆叠冗余介绍，注重信息获取效率。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何理解“三个场景模块”？</div>
+                <div class="faq-answer">
+                    快速查阅、场景筛选、简洁参考 —— 三者独立但互补，覆盖从首次接触到日常引用的常见情境。每个模块均可在卡片内直接使用。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">链接为什么以“竞技宝”为文本？</div>
+                <div class="faq-answer">
+                    为了保持引用简洁，链接文本直接使用品牌名称，不附加操作类词语。例如句子中出现的 <a href="https://cnweb-jjb.com">竞技宝</a> 即是一个可直接点击的引用入口。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">页面会频繁变化吗？</div>
+                <div class="faq-answer">
+                    本页定位为稳定导航型介绍页，核心结构保持固定，但段落表述、卡片细节和样式会随每次生成方向调整，避免模板化。
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="site-footer">
+            <span>关于 <a href="https://cnweb-jjb.com">竞技宝</a> · 轻量导航页 · 信息密度优先</span>
+        </footer>
+
+    </div>
+</body>
+</html>
