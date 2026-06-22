@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 · 你的日常赛事伴侣</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f4f6fa;
+            color: #1e2a3a;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f45 100%);
+            color: #e9edf2;
+            padding: 3rem 1.5rem 2.5rem;
+            text-align: center;
+            border-bottom: 4px solid #f7b731;
+        }
+
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #b0c4d9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #f7b731;
+            color: #0b1a2e;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.25rem 1.2rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        @media (min-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 960px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 1.8rem 1.5rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s;
+            border: 1px solid #eaeef3;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .card .icon {
+            display: inline-flex;
+            background: #eef3fa;
+            border-radius: 12px;
+            padding: 0.4rem 0.6rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a2f45;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #3f4e62;
+        }
+
+        .highlight-section {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 2rem 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid #e2e9f0;
+        }
+
+        .highlight-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-left: 5px solid #f7b731;
+            padding-left: 1rem;
+        }
+
+        .highlight-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-section li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .highlight-section li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #f7b731;
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background: #f0f4fa;
+            border-left: 4px solid #5a7b9c;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0.8rem;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 1.8rem 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #e2e9f0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #dce3ec;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-mini summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #1a2f45;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini summary::marker {
+            color: #f7b731;
+        }
+
+        .faq-mini p {
+            margin-top: 0.4rem;
+            color: #3f4e62;
+            font-size: 0.92rem;
+        }
+
+        a {
+            color: #1e6b9b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        a:hover {
+            color: #0a3b5c;
+            border-bottom-color: #f7b731;
+        }
+
+        .sentence-link {
+            display: inline;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7f94;
+            padding: 2rem 0 1.5rem;
+            border-top: 1px solid #dce3ec;
+            margin-top: 2.5rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 1.5px solid #f7b731;
+            color: #1a2f45;
+            font-weight: 600;
+            padding: 0.5rem 1.6rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 0.8rem;
+        }
+
+        .btn-outline:hover {
+            background: #f7b731;
+            color: #0b1a2e;
+            border-bottom-color: #f7b731;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero .sub {
+                font-size: 0.9rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>竞技宝 · 常看常新</h1>
+        <p class="sub">不只是赛事信息，更是你生活中的竞技节奏表。收藏、回头、再发现。</p>
+        <span class="tagline">再次访问 · 持续关注</span>
+    </header>
+
+    <main class="container">
+
+        <!-- 引入：为什么再次回来 -->
+        <div class="highlight-section">
+            <h2>✨ 不止是信息——陪你养成赛事节奏</h2>
+            <p>你或许已经来过 <a href="https://web-jjb.com">竞技宝</a> 一次，但真正的好工具值得反复使用。我们试着把赛事动态、赛程提醒和社区观点整合在同一个地方，让你每次打开都能快速进入状态，而不是从零开始搜寻。</p>
+            <p style="margin-top: 0.8rem;">无论是午休时扫一眼赛程，还是晚上回顾比分，页面结构始终清爽。我们把收藏过的比赛、关注的队伍信息做了轻量记忆，下次访问时依然能看到上次的浏览脉络。当然，具体数据以实时页面为准，但这让「再次打开」变得更自然。</p>
+        </div>
+
+        <!-- 亮点卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon">📌</div>
+                <h3>收藏即跟踪</h3>
+                <p>把感兴趣的赛事或战队加入收藏，下次回到 <a href="https://web-jjb.com">竞技宝</a> 时，它们会优先展示。不用重复搜索，关注自然延续。</p>
+            </div>
+            <div class="card">
+                <div class="icon">📅</div>
+                <h3>赛程一眼清</h3>
+                <p>列表按时间线排列，今日、明日、本周赛程一目了然。适合快速规划观看时间，不错过关键对局。</p>
+            </div>
+            <div class="card">
+                <div class="icon">💬</div>
+                <h3>观点轻参考</h3>
+                <p>页面内嵌社区短评和数据分析摘要，帮助你从不同角度理解比赛，但保持理性——所有内容仅供参考。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议：从收藏和持续关注切入 -->
+        <div class="tip-box">
+            <strong>🔁 让再次访问更有价值</strong>
+            <p style="margin-top: 0.4rem;">试试这些做法：每次离开前把感兴趣的系列赛加入收藏；一周至少回来两次，刷新赛程；看到新的数据视角时，随手记下自己的判断。慢慢地，<a href="https://web-jjb.com">竞技宝</a> 会成为你日程里一个安静的竞技窗口。</p>
+        </div>
+
+        <!-- 场景：自然融入日常 -->
+        <div class="highlight-section">
+            <h2>📎 三个日常场景</h2>
+            <ul>
+                <li><strong>通勤路上</strong> —— 打开收藏夹，扫一眼昨晚错过的关键比分，赛程变动也会提示。</li>
+                <li><strong>午间休息</strong> —— 浏览即将开始的比赛，看看社区里有没有有趣的赛前分析，当作放松。</li>
+                <li><strong>周末复盘</strong> —— 回顾一周赛果，对比自己的预测和实际数据，慢慢培养竞技直觉。</li>
+            </ul>
+        </div>
+
+        <!-- 可信但克制的说明 -->
+        <div class="faq-mini">
+            <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">❓ 一些你可能想问的</h2>
+            <details>
+                <summary>数据更新快吗？准确吗？</summary>
+                <p>我们依赖公开数据源和合作接口，尽力保持实时同步。但竞技比赛存在延迟和临时变动，建议以官方发布为准。页面信息作为参考，做决策时请多方核实。</p>
+            </details>
+            <details>
+                <summary>收藏会同步到其他设备吗？</summary>
+                <p>目前基于浏览器本地存储，同一设备登录同一账号可保留收藏。跨设备同步功能正在规划中。</p>
+            </details>
+            <details>
+                <summary>为什么推荐再次访问而不是一次性看完？</summary>
+                <p>竞技赛事是持续的过程，每天都有新赛果、新排位、新话题。一次浏览只能看到切片，持续关注才能感受完整节奏。这也是我们设计「收藏」和「最近浏览」的初衷。</p>
+            </details>
+            <details>
+                <summary>页面上的社区观点可靠吗？</summary>
+                <p>社区内容由用户生成，不代表平台立场。我们提供标签和筛选帮助判断，但请保持独立思考。</p>
+            </details>
+        </div>
+
+        <!-- 一个自然嵌入链接的句子，不含“进入、点击”等词 -->
+        <p style="margin: 2rem 0 1.2rem; font-size: 0.98rem; background: #ffffff; padding: 1rem 1.4rem; border-radius: 12px; border: 1px solid #e5ecf3;">
+            💡 如果你还没试过把 <a href="https://web-jjb.com">竞技宝</a> 加入浏览器书签，现在就可以试试。下次想看赛程或回顾收藏时，一步就能回到熟悉的位置。
+        </p>
+
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <span class="btn-outline">📂 重新熟悉你的收藏</span>
+        </div>
+
+        <div class="footer-note">
+            <p>基于兴趣与日常使用场景 · 不构成任何投资或投注建议</p>
+            <p style="margin-top: 0.3rem;">内容保持克制与真实 · 持续优化访问体验</p>
+        </div>
+
+    </main>
+
+</body>
+</html>
